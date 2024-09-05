@@ -7,6 +7,7 @@ const xlsx = require("xlsx");
 const app = express();
 const port = 3001;
 const SECRET_KEY = process.env.SECRET_KEY;
+const PASSWORD = process.env.PASSWORD;
 
 app.use(cors());
 app.use(express.json());
@@ -14,7 +15,7 @@ app.use(express.json());
 const users = [
   {
     username: "admin",
-    password: bcrypt.hashSync("M3l@nci@_Adm1n2024!", 10),
+    password: bcrypt.hashSync(PASSWORD, 10),
   },
 ];
 
